@@ -46,14 +46,14 @@ Email Validation Regex
 
 - [x] Validation Errors
 - [x] Duplicate (Email)
-- [ ] Cast Error
+- [x] Cast Error
 
 #### Security
 
-- [ ] helmet
-- [ ] cors
-- [ ] xss-clean
-- [ ] express-rate-limit
+- [x] helmet
+- [x] cors
+- [x] xss-clean
+- [x] express-rate-limit
 
 Swagger UI
 

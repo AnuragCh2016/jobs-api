@@ -7,6 +7,10 @@ import cors from 'cors';
 import xss from 'xss-clean';
 import rateLimit from 'express-rate-limit';
 
+import swaggerUI from 'swagger-ui-express'
+import YAML from 'yamljs'
+const swaggerDocument = YAML.load('./swagger.yaml')
+
 const rateLimiter = rateLimit({
 	windowMs: 15 * 60 * 1000, // 15 minutes
 	max: 100, // Limit each IP to 100 requests per `window` (here, per 15 minutes)
@@ -34,6 +38,12 @@ app.use(helmet())
 app.use(cors())
 app.use(xss())
 app.use(cors())
+
+app.get('/',(req,res)=>{
+    res.send(`<h1>Jobs API</h1>
+    <a href="/api-docs">Documentation</a>`);
+})
+app.use('/api-docs',swaggerUI.serve,swaggerUI.setup(swaggerDocument))
 
 // routes
 app.use('/api/v1/auth',authRoute);
