@@ -6,7 +6,7 @@ info:
     email: anuragch198@gmail.com
   version: '1.0'
 servers:
-- url: https://jobs-api-osnp.onrender.com/
+- url: https://jobs-api-osnp.onrender.com/api/v1
   variables: {}
 paths:
   /auth/register:
